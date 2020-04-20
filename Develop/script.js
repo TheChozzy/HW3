@@ -32,33 +32,30 @@ function writePassword() {
  var numeric = confirm("Please indicate if the password should have numeric characters.");
  var specialcharacter =  confirm("Please indicate if the password should have special characters.");
  var validpassword = '';
-
-//Insert position for generating the password//
 var charinsertcount = 0 ;
 
+//Generate Password//
 while(charinsertcount < validlength){
-    if(uppercase === true){
+    if(uppercase === true && charinsertcount<validlength){
       generateduppercase = uppercasecharacters.charAt(Math.floor((Math.random()*uppercasecharacters.length)+1));
       validpassword += generateduppercase;
       charinsertcount++;
     }
-    if(lowercase === true){
+    if(lowercase === true && charinsertcount<validlength){
       generatedlowercase = lowercasecharacters.charAt(Math.floor((Math.random()*lowercasecharacters.length)+1));
       validpassword += generatedlowercase;
       charinsertcount++;
     }
-    if(numeric === true){
+    if(numeric === true  && charinsertcount<validlength){
       generatednumeric = String(Math.floor((Math.random() * 9) + 1));
       validpassword += generatednumeric;
       charinsertcount++;
     }
-    if(specialcharacter === true){
+    if(specialcharacter === true  && charinsertcount<validlength){
       generatedspecial = String(specialcharacters.charAt(Math.floor((Math.random()*specialcharacters.length)+1)));
       validpassword += generatedspecial;
       charinsertcount++;
-    }
-    console.log(validpassword);
-    console.log(charinsertcount);
+    }   
 }
 //Alerting to the user for the written out random password//
  alert("Your new password is: /n"+ validpassword);
