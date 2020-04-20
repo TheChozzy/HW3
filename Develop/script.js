@@ -34,6 +34,7 @@ function writePassword() {
  var validpassword = '';
 var charinsertcount = 0 ;
 
+
 //Generate Password//
 while(charinsertcount < validlength){
     if(uppercase === true && charinsertcount<validlength){
@@ -55,10 +56,13 @@ while(charinsertcount < validlength){
       generatedspecial = String(specialcharacters.charAt(Math.floor((Math.random()*specialcharacters.length)+1)));
       validpassword += generatedspecial;
       charinsertcount++;
-    }   
+    }
+    console.log(validlength);
+    console.log(validpassword);
+    console.log(charinsertcount);
 }
 //Alerting to the user for the written out random password//
- alert("Your new password is: /n"+ validpassword);
+ alert("Your new password is: \n"+ validpassword);
 }
 
 // Click event to execute building and writing out the password to the user//
